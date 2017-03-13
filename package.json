@@ -1,0 +1,27 @@
+{
+  "name": "pwrtelegram",
+  "version": "0.0.1",
+  "description": "A simple pwrtelegram user wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "pwrtelegram",
+    "telegram"
+  ],
+  "bugs": {
+    "url": "https://github.com/kamikazechaser/pwrtelegram/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamikazechaser/pwrtelegram.git"
+  },
+  "author": "Mohammed Sohail <sohailsameja@gmail.com>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "needle": "^1.5.2",
+    "querystring": "^0.2.0",
+    "rangi": "^1.0.1"
+  }
+}
