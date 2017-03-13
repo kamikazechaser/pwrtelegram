@@ -18,10 +18,18 @@
     "url": "git+https://github.com/kamikazechaser/pwrtelegram.git"
   },
   "author": "Mohammed Sohail <sohailsameja@gmail.com>",
+  "contributors": [
+    {
+      "name": "Besatnias",
+      "email": "manofthebag@gmail.com",
+      "url": "https://github.com/Besatnias"
+    }
+  ],
   "license": "AGPL-3.0",
   "dependencies": {
-    "needle": "^1.5.2",
+    "pino": "^4.0.3",
     "querystring": "^0.2.0",
-    "rangi": "^1.0.1"
+    "request": "^2.81.0",
+    "request-promise": "^4.1.1"
   }
 }
