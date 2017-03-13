@@ -16,9 +16,9 @@ class User {
     return rp(opts).then(data=>{
       json = JSON.parse(data)
       if (json.ok) {
-        return data.result
+        return json.result
       } else {
-        throw data
+        throw json
       }
     })
   }
