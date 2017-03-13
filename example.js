@@ -1,3 +1,7 @@
 const User = require('.');
 
-bot = new User();
+const bot = new User({
+  token: ''
+});
+
+bot.sendMessage(chatId, 'Hello world');

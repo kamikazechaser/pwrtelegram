@@ -1,42 +1,59 @@
-// NPM installed modules
-const request = require("request-promise");
-const querystring = require("querystring");
-const logger = require("pino")()
+'use strict';
 
-// Own modules
-const package = require("./package.json");
+const querystring = require('querystring');
+const request = require('request-promise');
+const pino = require('pino');
 
-// Lib
+const pkg = require('./package.json');
+
+const error = {
+    noToken: 'You need to specify your access token',
+    noParams: 'You need to specify the required parameters, consult the documentation for more details'
+};
+
+const logger = new pino({
+  name: `${pkg.name} v${pkg.version}`,
+  prettyPrint: true
+});
+
 class User {
+
   constructor (opts) {
-    opts.token ? this.token = opts.token : logger.error(new Error("You need to specify your access token"));
-    this.baseUrl = opts.baseUrl || "https://api.pwrtelegram.xyz/user"
+    opts.token ? this.token = opts.token : outputFatalError(error.noToken);
+    this.baseUrl = opts.baseUrl || 'api.pwrtelegram.xyz';
   }
 
-  api (method, form) {
-    opts = {
-      method: "POST",
-      uri: `${this.baseUrl}${this.token}/${method}`,
-      body: form
-    }
-    return rp(opts).then(data=>{
-      json = JSON.parse(data)
-      if (json.ok) {
-        return data.result
-      } else {
-        throw data
-      }
-    })
-  }
-  
-  sendMessage (chatId, text, opts) {
-    if (typeof chatId === "object") {
-      opts = chatId
-    } else {
-      opts.chat_id = opts.chat_id || chatId
-      opts.text = opts.text || text
-    }
-    if (!chatId) throw "No parameters were passed"
-    return api("sendMessage", opts)
-  }
+  _request(_method, _params) {
+    const options = {};
+    options.uri = `https://${this.baseUrl}/user${this.token}/${_method}?${_params}`;
+    options.headers = {
+      'content-type': 'application/json',
+      'accept': 'application/x-www-form-urlencoded'
+    };
+    options.json = true;
+    return request(options)
+      .then(ctx => {;
+        if (ctx.ok) {
+          return ctx;
+        }
+        else {
+          outputFatalError(ctx);
+        } 
+      });
+  };
+
+  sendMessage(chatId, text) {
+    const opts = {};
+    opts.peer = chatId;
+    opts.message = text;
+    return this._request('messages.sendMessage', querystring.stringify(opts));
+  };
+
 }
+
+const outputFatalError = (function (err) {
+  logger.error(err);
+  process.exit(1);
+})
+
+module.exports = User;
