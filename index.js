@@ -21,7 +21,7 @@ let api = {
 
 // Constructor
 const User = function (opts) {
-  if (typeof opts !== 'object' || !opts.hasOwnProperty('accessToken')) {
+  if (typeof opts !== 'object' || !opts.hasOwnProperty('accessToken') || opts.accessToken == '') {
     danger(error.noToken);
     process.exit(1)
   }
@@ -63,8 +63,9 @@ function fireRequest(method, data, callback) {
 
   const options = {
     json: true,
-    // Hang up after 15 seconds
-    timeout: 15000,
+    // Hang up after 15 seconds (Production)
+    // Never hangup (Development)
+    timeout: 0,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
