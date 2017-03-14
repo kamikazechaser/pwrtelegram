@@ -4,7 +4,7 @@
   "description": "A simple pwrtelegram user wrapper",
   "main": "index.js",
   "scripts": {
-    "gen-doc": "jsdoc2md --files index.js --template api.hbs > api.md"
+    "gen-doc": "jsdoc2md --files index.js --template api.hbs > README.md"
   },
   "keywords": [
     "pwrtelegram",
