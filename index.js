@@ -23,9 +23,9 @@ class User {
     this.baseUrl = opts.baseUrl || 'api.pwrtelegram.xyz';
   }
 
-  _request(_method, _params) {
+  _request(method, params) {
     const options = {};
-    options.uri = `https://${this.baseUrl}/user${this.token}/${_method}?${_params}`;
+    options.uri = `https://${this.baseUrl}/user${this.token}/${method}?${params}`;
     options.headers = {
       'content-type': 'application/json',
       'accept': 'application/x-www-form-urlencoded'
@@ -37,7 +37,7 @@ class User {
           return ctx;
         }
         else {
-          outputFatalError(ctx);
+          outputError(ctx);
         } 
       });
   };
@@ -54,6 +54,11 @@ class User {
 const outputFatalError = (function (err) {
   logger.error(err);
   process.exit(1);
+});
+
+const outputError = (function (err) {
+  logger.error(err);
+  return
 })
 
 module.exports = User;
