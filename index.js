@@ -55,10 +55,9 @@ class User {
   * @return {Promise} Updates
   * @see https://core.telegram.org/method/messages.sendMessage
   **/
-  sendMessage(chatId, text) {
-    const opts = {};
+  sendMessage(chatId, message, opts = {}) {
     opts.peer = chatId;
-    opts.message = text;
+    opts.message = message;
     return this._request('messages.sendMessage', querystring.stringify(opts));
   };
 
@@ -69,8 +68,7 @@ class User {
   * @return {Promise} Boolean
   * @see https://core.telegram.org/method/messages.setTyping
   **/
-  setTyping(chatId, action) {
-    const opts = {};
+  setTyping(chatId, action, opts = {}) {
     opts.peer = chatId;
     opts.action = action;
     return this._request('messages.setTyping', querystring.stringify(opts));
@@ -84,8 +82,7 @@ class User {
   * @return {Promise}
   * @see https://core.telegram.org/method/messages.forwardMessage
   **/
-  forwardMessage(chatId, messageId) {
-    const opts = {};
+  forwardMessage(chatId, messageId, opts = {}) {
     opts.peer = chatId;
     opts.id = messageId;
     return this._request('messages.forwardMessage', querystring.stringify(opts));
