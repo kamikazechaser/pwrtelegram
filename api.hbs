@@ -10,7 +10,7 @@
 
 This library allows you to invoke Telegram's core API methods, using PWRTelegram API as a mediator. This allows one to build user bots.
 
-**Importnat Information**
+**Important Information**
 
 - Based on [MadelineProto](https://daniil.it/MadelineProto/API_docs/) layer 62
 - It is HIGHLY recommended to run [your own instance](https://github.com/pwrtelegram/pwrtelegram-backend) of PWRTelegram for speed
