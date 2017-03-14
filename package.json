@@ -1,7 +1,7 @@
 {
   "name": "pwrtelegram",
   "version": "0.0.1",
-  "description": "A simple pwrtelegram user wrapper",
+  "description": "A Node.js Library for the PWRTelegram User API, which is the equivalent to Telegram's Client API",
   "main": "index.js",
   "scripts": {
     "gen-doc": "jsdoc2md --files index.js --template api.hbs > README.md"
