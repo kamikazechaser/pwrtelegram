@@ -1,10 +1,11 @@
 {
   "name": "pwrtelegram",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "main": "lib/index.js",
   "description": "A Node.js Library for the PWRTelegram User API, which is the equivalent to Telegram's Client API",
-  "main": "index.js",
   "scripts": {
-    "gen-doc": "jsdoc2md --files index.js --template api.hbs > README.md"
+    "gen-doc": "jsdoc2md --files lib/index.js > doc/api.md",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "keywords": [
     "pwrtelegram",
@@ -28,8 +29,12 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "pino": "^4.0.3",
-    "querystring": "^0.2.0",
     "request": "^2.81.0",
     "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.2.1"
   }
 }
