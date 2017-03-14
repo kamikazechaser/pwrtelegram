@@ -46,12 +46,11 @@ class User {
       });
   };
 
-  // Working with messages
-
 /**
   * Send text message.
   * @param  {Number|String} chatId Unique identifier for the message recipient
   * @param  {String} text Text of the message to be sent
+  * @param  {Object} [options] Additional Telegram query options  
   * @return {Promise} Updates
   * @see https://core.telegram.org/method/messages.sendMessage
   **/

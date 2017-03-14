@@ -2,9 +2,22 @@
  [![https://telegram.me/Bestulo](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-Besatnias-blue.svg?style=flat-square)](https://telegram.me/Bestulo)
  >PWRTelegram User API
 
- A Node.js Library for the PWRTelegram User API, which is the equivalent to Telegram's Client API
+ A Node.js Library for the PWRTelegram User API
 
  > Powered by [PWRTelegram API](http://pwrtelegram.xyz/)
+
+ ## About
+
+This library allows you to invoke Telegram's core API methods, using PWRTelegram API as a mediator. This allows one to build user bots.
+
+**Importnat Information**
+
+- Based on [MadelineProto](https://daniil.it/MadelineProto/API_docs/) layer 62
+- It is HIGHLY recommended to run [your own instance](https://github.com/pwrtelegram/pwrtelegram-backend) of PWRTelegram for speed
+- The global instance is [under heavy load](https://t.me/daniilgentili/125), so requests may take upto 15 seconds
+- This library is promised based
+- This library returns actual server errors for debugging purposes
+
 
  ## Install
 
@@ -23,7 +36,7 @@ User
 
 * [User](#User)
     * [new User(token, baseUrl)](#new_User_new)
-    * [.sendMessage(chatId, text)](#User+sendMessage) ⇒ <code>Promise</code>
+    * [.sendMessage(chatId, text, [options])](#User+sendMessage) ⇒ <code>Promise</code>
     * [.setTyping(chatId, action)](#User+setTyping) ⇒ <code>Promise</code>
     * [.forwardMessage(chatId, messageId)](#User+forwardMessage) ⇒ <code>Promise</code>
 
@@ -38,7 +51,7 @@ User
 
 <a name="User+sendMessage"></a>
 
-### user.sendMessage(chatId, text) ⇒ <code>Promise</code>
+### user.sendMessage(chatId, text, [options]) ⇒ <code>Promise</code>
 Send text message.
 
 **Kind**: instance method of <code>[User](#User)</code>  
@@ -49,6 +62,7 @@ Send text message.
 | --- | --- | --- |
 | chatId | <code>Number</code> &#124; <code>String</code> | Unique identifier for the message recipient |
 | text | <code>String</code> | Text of the message to be sent |
+| [options] | <code>Object</code> | Additional Telegram query options |
 
 <a name="User+setTyping"></a>
 
