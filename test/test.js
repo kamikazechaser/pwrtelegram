@@ -3,21 +3,9 @@ const User = require('../lib/index');
 
 const timeout = 15 * 1000;
 
-const token = 'process.env.TOKEN';
-if (!token) {
-    console.error('Error: Token is required');
-    process.exit(1);
-}
-
-const baseUrl = 'process.env.BASE_URL';
-if (!baseUrl) {
-    console.error('Error: Custom base url is required');
-    process.exit(1);
-}
-
 const bot = new User({
-  token: token,
-  baseUrl: baseUrl
+  token: process.env.TOKEN,
+  baseUrl: process.env.BASE_URL
 });
 
 describe('module.exports', function() {
