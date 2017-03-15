@@ -1,8 +1,8 @@
 {
   "name": "pwrtelegram",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
-  "description": "A Node.js Library for the PWRTelegram User API, which is the equivalent to Telegram's Client API",
+  "description": "A Node.js Library for the PWRTelegram User API",
   "scripts": {
     "gen-doc": "jsdoc2md --files lib/index.js > doc/api.md",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha"
