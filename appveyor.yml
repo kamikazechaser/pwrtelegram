@@ -12,5 +12,8 @@ test_script:
   - cmd: npm test
 after_build:
   - cmd: codecov
+build: off
+matrix:
+  fast_finish: true
 cache:
   - node_modules -> package.json    
