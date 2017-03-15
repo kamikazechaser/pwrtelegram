@@ -1,7 +1,7 @@
 const should = require('should');
 const User = require('../lib/index');
 
-const timeout = 45 * 1000;
+const timeout = 60 * 1000;
 
 const bot = new User({
   token: process.env.TOKEN,
