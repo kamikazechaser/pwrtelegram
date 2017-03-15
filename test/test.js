@@ -51,6 +51,27 @@ describe('Methods', function() {
             return done();
         })
     });
+    it('sendPhotoExternal', function(done) {
+        this.timeout(timeout)
+        bot.sendPhotoExternal('kamikazechaser', 'http://i.imgur.com/4AiXzf8.jpg', 'Cat got money!').then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });
+    it('sendDocumentExternal', function(done) {
+        this.timeout(timeout)
+        bot.sendDocumentExternal('kamikazechaser', 'http://www.jeanmariedekoninck.mat.ulaval.ca/fileadmin/jmdk/Documents/Publications/2007_on_the_index_of_composition_of_integers_from_various_sets.pdf', 'Maths!').then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });
+    it('sendGifExternal', function(done) {
+        this.timeout(timeout)
+        bot.sendGifExternal('kamikazechaser', 'http://i.imgur.com/W0JfyHW.gif', 'Surprise!').then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });           
     it('forwardMessage', function(done) {
         this.timeout(timeout)
         bot.forwardMessage('kamikazechaser', '72175').then(ctx => {

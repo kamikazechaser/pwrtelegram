@@ -1,5 +1,4 @@
  [![https://telegram.me/kamikazechaser](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-kamikazechaser-blue.svg?style=flat-square)](https://telegram.me/kamikazechaser)
- [![https://telegram.me/Bestulo](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-Besatnias-blue.svg?style=flat-square)](https://telegram.me/Bestulo)
  [![Travis](https://img.shields.io/travis/kamikazechaser/pwrtelegram.svg?style=flat-square)](https://travis-ci.org/kamikazechaser/pwrtelegram)
  [![Codecov](https://img.shields.io/codecov/c/github/kamikazechaser/pwrtelegram.svg?style=flat-square)](https://codecov.io/gh/kamikazechaser/pwrtelegram)
  >PWRTelegram User API
