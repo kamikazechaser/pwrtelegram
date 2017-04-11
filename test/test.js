@@ -78,5 +78,12 @@ describe('Methods', function() {
             should(ctx.ok).eql(true);
             return done();
         })
-    });              
+    });
+    it('inviteUser', function(done) {
+        this.timeout(timeout)
+        bot.inviteUser('ThorsHammerBot', '-1001034576532').then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });                 
 });
