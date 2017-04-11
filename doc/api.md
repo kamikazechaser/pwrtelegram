@@ -14,6 +14,10 @@ User
     * [.setTyping(chatId, action)](#User+setTyping) ⇒ <code>Promise</code>
     * [.setUploadTyping(chatId, action, progress)](#User+setUploadTyping) ⇒ <code>Promise</code>
     * [.forwardMessage(chatId, messageId)](#User+forwardMessage) ⇒ <code>Promise</code>
+    * [.inviteUser(chatId, userId)](#User+inviteUser) ⇒ <code>Promise</code>
+    * [.editTitle(chatId, title)](#User+editTitle) ⇒ <code>Promise</code>
+    * [.editTitle(chatId, about)](#User+editTitle) ⇒ <code>Promise</code>
+    * [.getMembers(chatId, type, offset, limit)](#User+getMembers) ⇒ <code>Promise</code>
 
 <a name="new_User_new"></a>
 
@@ -128,4 +132,62 @@ Forward text message.
 | --- | --- | --- |
 | chatId | <code>Number</code> or <code>String</code> | Unique identifier for the message recipient |
 | messageId | <code>Number</code> or <code>String</code> | Unique identifier of the message to be forwarded |
+
+<a name="User+inviteUser"></a>
+
+### user.inviteUser(chatId, userId) ⇒ <code>Promise</code>
+Invite user to a channel/supergroup.
+
+**Kind**: instance method of <code>[User](#User)</code>  
+**Returns**: <code>Promise</code> - Updates  
+**See**: https://tjhorner.com/tl-schema/method/channels.inviteToChannel  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| chatId | <code>Number</code> or <code>String</code> | Unique identifier for the channel/supergroup |
+| userId | <code>String</code> | Unique identifier for the user to be added |
+
+<a name="User+editTitle"></a>
+
+### user.editTitle(chatId, title) ⇒ <code>Promise</code>
+Edit supergroup/channel title.
+
+**Kind**: instance method of <code>[User](#User)</code>  
+**Returns**: <code>Promise</code> - Updates  
+**See**: https://tjhorner.com/tl-schema/method/channels.editTitle  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| chatId | <code>Number</code> or <code>String</code> | Unique identifier for the message recipient |
+| title | <code>String</code> | New title for the supergroup/channel |
+
+<a name="User+editTitle"></a>
+
+### user.editTitle(chatId, about) ⇒ <code>Promise</code>
+Edit supergroup/channel about.
+
+**Kind**: instance method of <code>[User](#User)</code>  
+**Returns**: <code>Promise</code> - Updates  
+**See**: https://tjhorner.com/tl-schema/method/channels.editAbout  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| chatId | <code>Number</code> or <code>String</code> | Unique identifier for the message recipient |
+| about | <code>String</code> | New about text for the supergroup/channel |
+
+<a name="User+getMembers"></a>
+
+### user.getMembers(chatId, type, offset, limit) ⇒ <code>Promise</code>
+Get supergroup/channel participants.
+
+**Kind**: instance method of <code>[User](#User)</code>  
+**Returns**: <code>Promise</code> - channels_ChannelParticipant  
+**See**: https://tjhorner.com/tl-schema/method/channels.getParticipants  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| chatId | <code>Number</code> or <code>String</code> | Unique identifier for the message recipient |
+| type | <code>String</code> | Type of chat participants |
+| offset | <code>Number</code> | offset participants |
+| limit | <code>Number</code> | limit of participants |
 
