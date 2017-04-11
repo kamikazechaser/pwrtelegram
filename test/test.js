@@ -85,5 +85,26 @@ describe('Methods', function() {
             should(ctx.ok).eql(true);
             return done();
         })
-    });                 
+    });
+    it('editTitle', function(done) {
+        this.timeout(timeout)
+        bot.editTitle('-1001060527903', 'Genesis: Test From PWRTelegram').then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });   
+    it('editAbout', function(done) {
+        this.timeout(timeout)
+        bot.editAbout('-1001060527903', 'Genesis: Test From PWRTelegram').then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });      
+    it('getMembers', function(done) {
+        this.timeout(timeout)
+        bot.editTitle('-1001060527903', 'channelParticipantsAdmins', 0, 3).then(ctx => {
+            should(ctx.ok).eql(true);
+            return done();
+        })
+    });                  
 });
