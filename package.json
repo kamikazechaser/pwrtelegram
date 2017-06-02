@@ -1,6 +1,6 @@
 {
   "name": "pwrtelegram",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/index.js",
   "description": "A Node.js Library for the PWRTelegram User API",
   "scripts": {
