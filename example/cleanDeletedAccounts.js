@@ -23,10 +23,10 @@ const TelegramBot = require("node-telegram-bot-api");
 const User = require("../lib/index");
 
 // module variables
-const BOT_TOKEN = process.env.BOT_TOKEN || "382303838:AAGZq_4iMM84D9OGNB_Qf8IrLkbOfe0sBuE";
+const BOT_TOKEN = process.env.BOT_TOKEN || "";
 // Check out the pwr telegram repo pwrtelegram/pwrtelegram, to see how to generate a user token,
 // I will make a bot that makes the process simple in the future!
-const USER_TOKEN = process.env.USER_TOKEN || "319384216:ADvk36MC1Y0nbabu0OK-zFybNukslSoY96W1-lrbJSg";
+const USER_TOKEN = process.env.USER_TOKEN || "";
 
 // We initialize the respective libraries
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
@@ -34,9 +34,10 @@ const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 const user = new User({ token: USER_TOKEN });
 
 // roof limit: this is the approx amount of users in a group.
+// make sure you change this value!
 const roofLimit = process.env.ROOF_LIMIT || 100;
 // groupid: unique identifier of the group.
-const groupId = process.env.GROUP_ID || "-1001079843822";
+const groupId = process.env.GROUP_ID || "";
 
 // 1st step is to get the members of the group
 // notice the type of filter we are using i.e channelParticipantsRecent
